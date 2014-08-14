@@ -9,10 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/core-1.51.0.0" />
-            <option value="$PROJECT_DIR$/pg-1.51.0.0" />
-            <option value="$PROJECT_DIR$/pkix-1.51.0.0" />
-            <option value="$PROJECT_DIR$/prov-1.51.0.0" />
           </set>
         </option>
       </GradleProjectSettings>

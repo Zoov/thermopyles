@@ -9,6 +9,8 @@ import android.view.MenuItem;
 public class CreateKey extends Activity
 {
 
+    //http://stackoverflow.com/questions/20112338/use-of-spongy-castle-in-android
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

@@ -1,0 +1,11 @@
+org.spongycastle.apache.bzip2
+org.spongycastle.bcpg
+org.spongycastle.bcpg.attr
+org.spongycastle.bcpg.sig
+org.spongycastle.openpgp
+org.spongycastle.openpgp.bc
+org.spongycastle.openpgp.examples
+org.spongycastle.openpgp.jcajce
+org.spongycastle.openpgp.operator
+org.spongycastle.openpgp.operator.bc
+org.spongycastle.openpgp.operator.jcajce

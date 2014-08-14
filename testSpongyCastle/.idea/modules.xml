@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core-1.51.0.0/core-1.51.0.0.iml" filepath="$PROJECT_DIR$/core-1.51.0.0/core-1.51.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pg-1.51.0.0/pg-1.51.0.0.iml" filepath="$PROJECT_DIR$/pg-1.51.0.0/pg-1.51.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pkix-1.51.0.0/pkix-1.51.0.0.iml" filepath="$PROJECT_DIR$/pkix-1.51.0.0/pkix-1.51.0.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prov-1.51.0.0/prov-1.51.0.0.iml" filepath="$PROJECT_DIR$/prov-1.51.0.0/prov-1.51.0.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/testSpongyCastle.iml" filepath="$PROJECT_DIR$/testSpongyCastle.iml" />
     </modules>
   </component>

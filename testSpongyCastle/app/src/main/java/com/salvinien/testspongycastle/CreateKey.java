@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import java.security.KeyPair;
 
 
 public class CreateKey extends Activity
@@ -17,6 +20,20 @@ public class CreateKey extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_key);
         //for test
+        try
+        {
+            KeyPair aKey = SecMod.generateRSAKeyPair();
+            // globally
+            TextView myAwesomeTextView = (TextView) findViewById(R.id.editText2);
+
+            //in your OnCreate() method
+            String s = SecMod.bytesToHex(aKey.getPublic().getEncoded());
+            myAwesomeTextView.setText(s);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
 

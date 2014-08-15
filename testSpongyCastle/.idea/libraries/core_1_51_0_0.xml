@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/app/libs/core-1.51.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../spongyCastle/src" />
+    </SOURCES>
   </library>
 </component>

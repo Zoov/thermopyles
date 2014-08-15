@@ -26,8 +26,8 @@ import java.util.Arrays;
 public class SecMod
 {
 
-    static int KEY_SIZE=256;
-
+    final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
+    static                 int    KEY_SIZE = 256;
     static
     {
         //Security.addProvider(new org.spongycastle.jce.provider.BouncyCastleProvider());
@@ -35,21 +35,20 @@ public class SecMod
         Security.insertProviderAt(new BouncyCastleProvider(), 1);
     }
 
-
     public static PublicKey getRSAPublicKeyFromString(String apiKey) throws Exception
     {
-        KeyFactory keyFactory=KeyFactory.getInstance("RSA", "SC");
-        byte[] publicKeyBytes=Base64.decode(apiKey.getBytes("UTF-8"), Base64.DEFAULT);
-        X509EncodedKeySpec x509KeySpec=new X509EncodedKeySpec(publicKeyBytes);
+        KeyFactory keyFactory = KeyFactory.getInstance("RSA", "SC");
+        byte[] publicKeyBytes = Base64.decode(apiKey.getBytes("UTF-8"), Base64.DEFAULT);
+        X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(publicKeyBytes);
         return keyFactory.generatePublic(x509KeySpec);
     }
 
     public static PrivateKey getRSAPrivateKeyFromString(String key) throws Exception
     {
-        byte[] clear=Base64.decode(key, Base64.DEFAULT);
-        PKCS8EncodedKeySpec keySpec=new PKCS8EncodedKeySpec(clear);
-        KeyFactory fact=KeyFactory.getInstance("RSA", "SC");
-        PrivateKey priv=fact.generatePrivate(keySpec);
+        byte[] clear = Base64.decode(key, Base64.DEFAULT);
+        PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(clear);
+        KeyFactory fact = KeyFactory.getInstance("RSA", "SC");
+        PrivateKey priv = fact.generatePrivate(keySpec);
         Arrays.fill(clear, (byte) 0);
         return priv;
     }
@@ -58,15 +57,33 @@ public class SecMod
      * Generate a keyPair suitable for RSA encryption
      *
      * @return The generated key
+     *
      * @throws NoSuchAlgorithmException
      */
     public static KeyPair generateRSAKeyPair() throws NoSuchAlgorithmException, NoSuchProviderException, InvalidAlgorithmParameterException
     {
-        SecureRandom random=new SecureRandom();
-        RSAKeyGenParameterSpec spec=new RSAKeyGenParameterSpec(KEY_SIZE, RSAKeyGenParameterSpec.F4);
-        KeyPairGenerator generator=KeyPairGenerator.getInstance("RSA", "SC");
+        KeyPair aKey;
+
+        SecureRandom random = new SecureRandom();
+        RSAKeyGenParameterSpec spec = new RSAKeyGenParameterSpec(KEY_SIZE, RSAKeyGenParameterSpec.F4);
+        KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA", "SC");
         generator.initialize(spec, random);
-        return generator.generateKeyPair();
+
+        aKey = generator.generateKeyPair();
+        return aKey;
     }
 
+    public static String bytesToHex(byte[] bytes)
+    {
+        char[] hexChars = new char[ bytes.length * 2 ];
+
+        for(int j = 0; j < bytes.length; j++)
+        {
+            int v = bytes[ j ] & 0xFF;
+            hexChars[ j * 2 ] = hexArray[ v >>> 4 ];
+            hexChars[ j * 2 + 1 ] = hexArray[ v & 0x0F ];
+        }
+
+        return new String(hexChars);
+    }
 }

@@ -1,0 +1,20 @@
+
+http://developer.android.com/guide/topics/providers/contacts-provider.html
+=> contact data description
+=> sync with system such as Google Contacts, google+, Exchange, twitter, etc
+
+
+http://developer.android.com/training/contacts-provider/index.html
+=> how to access to contact Data
+
+
+
+
+http://www.higherpass.com/Android/Tutorials/Working-With-Android-Contacts/
+=> lots of infos on how to access to contacts data (even with android older version)
+=> contact, address, etc  class description
+
+
+
+http://examples.javacodegeeks.com/android/core/provider/android-contacts-example/
+=> simple demo/code about accessing contact data

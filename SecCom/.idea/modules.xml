@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SecCom.iml" filepath="$PROJECT_DIR$/SecCom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SecComDB/SecComDB.iml" filepath="$PROJECT_DIR$/SecComDB/SecComDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/maui/maui.iml" filepath="$PROJECT_DIR$/maui/maui.iml" />
     </modules>

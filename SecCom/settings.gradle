@@ -1,1 +1,1 @@
-include ':app', ':maui'
+include ':app', ':maui', ':SecComDB'

@@ -28,6 +28,7 @@ public class SecMod
 
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
     static                 int    KEY_SIZE = 256;
+
     static
     {
         //Security.addProvider(new org.spongycastle.jce.provider.BouncyCastleProvider());

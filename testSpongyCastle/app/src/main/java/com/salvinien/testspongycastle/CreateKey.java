@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.security.Key;
 import java.security.KeyPair;
 
 
@@ -22,13 +23,19 @@ public class CreateKey extends Activity
         //for test
         try
         {
-            KeyPair aKey = SecMod.generateRSAKeyPair();
+            KeyPair kp = MauiCrypterManager.generateRSAKey();
+            Key priv = kp.getPrivate();
+            Key pub = kp.getPublic();
+
             // globally
             TextView myAwesomeTextView = (TextView) findViewById(R.id.editText2);
 
             //in your OnCreate() method
-            String s = SecMod.bytesToHex(aKey.getPublic().getEncoded());
+            String s = SecMod.bytesToHex(pub.getEncoded());
             myAwesomeTextView.setText(s);
+
+            //SimpleProviderTest.test();
+            //SimplePolicyTest.test();
         }
         catch(Exception e)
         {
@@ -51,8 +58,8 @@ public class CreateKey extends Activity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id=item.getItemId();
-        if(id==R.id.action_settings)
+        int id = item.getItemId();
+        if(id == R.id.action_settings)
         {
             return true;
         }
